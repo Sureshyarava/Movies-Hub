@@ -4,6 +4,7 @@ package dev.sureshyarava.movies.controllers;
 import dev.sureshyarava.movies.models.Movie;
 import dev.sureshyarava.movies.repositories.MovieRepository;
 import dev.sureshyarava.movies.services.MovieService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1/movies")
-@ResponseBody
+@Slf4j
 public class MovieController {
 
     private final MovieService movieService;

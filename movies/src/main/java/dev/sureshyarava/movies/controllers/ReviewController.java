@@ -1,7 +1,6 @@
 package dev.sureshyarava.movies.controllers;
 
 import dev.sureshyarava.movies.models.Review;
-import dev.sureshyarava.movies.repositories.ReviewRepository;
 import dev.sureshyarava.movies.services.ReviewService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,8 +22,8 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<Review> createReviewMethod(@RequestBody Map<String, String> payload){
-        return new ResponseEntity<>(reviewService.createReview(payload.get("body"), payload.get("imdbID")), HttpStatus.CREATED);
+        return new ResponseEntity<>(reviewService.createReview(payload.get("body"), payload.get("imdbId")), HttpStatus.CREATED);
     }
 }
